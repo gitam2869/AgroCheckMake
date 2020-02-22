@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Agro CheckMake</string>
+
+    <!--    String of Next Button in Main Activity-->
+
+    <string name="stringButtonNextMainActivity">Next</string>
+
+    <!--    String of Farmer in Category Activity-->
+    <string name="stringButtonFarmerCategoryActivity">Farmer</string>
+
+    <!--    String of Buyer in Category Activity-->
+    <string name="stringButtonBuyerCategoryActivity">Buyer</string>
+</resources>

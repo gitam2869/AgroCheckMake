@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#28A328</color>
+    <color name="colorPrimaryDark">#268826</color>
+    <color name="colorAccent">#D81B60</color>
+
+<!--    color of next button in main Activity-->
+    <color name="colorButtonSameForAll">#00E676</color>
+
+<!--    color of farmer and buyer heading in login page-->
+    <color name="colorTextViewFarmerBuyerLoginActivity">#FF3D00</color>
+
+<!--    color of white background-->
+    <color name="colorWhiteBackground">#FFFFFF</color>
+
+<!--    color for edittext hintcolor-->
+    <color name="colorOfEditTextTextHintColor">#B3000000</color>
+
+<!--    color for edittext Text-->
+    <color name="colorOfEditTextText">#000000</color>
+
+</resources>

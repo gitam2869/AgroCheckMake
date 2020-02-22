@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/gradient1"
+    android:padding="8dp"
+    android:layout_margin="8dp"
+    >
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="#ffff"
+        android:padding="8dp"
+        >
+
+        <ImageView
+            android:id="@+id/idImageViewUploadedImageSellCropFarmer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_weatherforecastrain" />
+        <TextView
+            android:id="@+id/idTextViewSellCropNameFarmer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PRS User List"
+            android:textSize="18sp"
+            android:paddingLeft="20dp"
+            android:textColor="#000000"
+            />
+
+        <TextView
+            android:id="@+id/idTextViewSellCropQuantityFarmer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PRS User List"
+            android:textSize="18sp"
+            android:paddingLeft="20dp"
+            android:textColor="#000000"
+            />
+
+        <TextView
+            android:id="@+id/idTextViewSellCropRateFarmer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PRS User List"
+            android:textSize="18sp"
+            android:paddingLeft="20dp"
+            android:textColor="#000000"
+            />
+
+        <TextView
+            android:id="@+id/idTextViewSellCropDescriptionFarmer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PRS User List"
+            android:textSize="18sp"
+            android:paddingLeft="20dp"
+            android:textColor="#000000"
+            />
+
+        <TextView
+            android:id="@+id/idTextViewSellCropFarmerNameFarmer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PRS User List"
+            android:textSize="18sp"
+            android:paddingLeft="20dp"
+            android:textColor="#000000"
+            />
+        <TextView
+            android:id="@+id/idTextViewSellCropFarmeNumberFarmer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PRS User List"
+            android:textSize="18sp"
+            android:paddingLeft="20dp"
+            android:textColor="#000000"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>

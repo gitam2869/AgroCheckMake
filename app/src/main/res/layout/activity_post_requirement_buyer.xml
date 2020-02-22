@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient1"
+    android:orientation="vertical"
+    android:weightSum="10"
+    tools:context=".PostRequirementBuyerActivity">
+
+
+
+    <GridLayout
+        android:layout_weight="10"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:rowCount="2"
+        android:columnCount="1"
+        android:alignmentMode="alignMargins"
+        android:columnOrderPreserved="false"
+        android:padding="14dp"
+        android:layout_margin="30dp"
+        android:background="@color/colorWhiteBackground"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="15dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_cropname"
+                />
+
+            <EditText
+                android:id="@+id/idEditTextCropNamePostRequirementBuyerActivity"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:hint="Enter Crop Name"
+                android:inputType="textCapWords"
+                android:textColor="#000000"
+                android:textColorHint="#B3000000"
+                android:textSize="16sp"
+                android:layout_marginLeft="20dp"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="15dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_cropquantitybag"
+                />
+
+            <EditText
+                android:id="@+id/idEditTextQuantityPostRequirementBuyerActivity"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:hint="Enter Crop Quantity"
+                android:inputType="textCapWords"
+                android:textColor="#000000"
+                android:textColorHint="#B3000000"
+                android:textSize="16sp"
+                android:layout_marginLeft="20dp"
+                />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="15dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_croprate"
+                />
+
+            <EditText
+                android:id="@+id/idEditTextRatePostRequirementBuyerActivity"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:hint="Enter Crop Rate"
+                android:inputType="textCapWords"
+                android:textColor="#000000"
+                android:textColorHint="#B3000000"
+                android:textSize="16sp"
+                android:layout_marginLeft="20dp"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="15dp"
+            >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_cropdescription"
+                />
+
+            <EditText
+                android:id="@+id/idEditTextCropDescriptionPostRequirementBuyerActivity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:hint="Enter Crop Description"
+                android:inputType="textMultiLine"
+                android:textColor="#000000"
+                android:textColorHint="#B3000000"
+                android:textSize="16sp"
+                android:layout_marginLeft="20dp"
+                />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="15dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_selecttimeperiod"
+                />
+
+            <EditText
+                android:id="@+id/idEditTextTimePeriodPostRequirementBuyerActivity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:hint="In How many months \ndo you want product?"
+                android:inputType="phone"
+                android:textColor="#000000"
+                android:textColorHint="#B3000000"
+                android:textSize="16sp"
+                android:layout_marginLeft="20dp"
+                />
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="months"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:textSize="14sp"-->
+<!--                android:textColor="#000000"-->
+<!--                android:layout_marginLeft="8dp"-->
+<!--                />-->
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="15dp"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="* This Post will only for last seven days"
+                android:layout_gravity="center"
+                android:textSize="14sp"
+                android:textColor="@color/colorTextViewFarmerBuyerLoginActivity"
+                />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="15dp"
+            >
+
+            <Button
+                android:id="@+id/idButtonPostRequirementPostRequirementBuyerActivity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#00E676"
+                android:text="Post Requirement"
+                android:textSize="18sp"
+                android:textColor="#7B1FA2"
+                android:layout_marginTop="13.15dp"
+                />
+        </LinearLayout>
+
+    </GridLayout>
+
+</LinearLayout>
+
+<!--complete-->

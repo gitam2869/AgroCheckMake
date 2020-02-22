@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient1"
+    android:orientation="vertical"
+    android:weightSum="10"
+    tools:context=".ProfileFarmerActivity">
+
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="42dp"
+        >
+        <GridLayout
+            android:layout_weight="10"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:rowCount="2"
+            android:columnCount="1"
+            android:alignmentMode="alignMargins"
+            android:columnOrderPreserved="false"
+            android:paddingLeft="14dp"
+            android:paddingRight="14dp"
+            android:paddingTop="28dp"
+            android:paddingBottom="28dp"
+            android:layout_margin="28dp"
+            android:background="@color/colorWhiteBackground"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_gravity="center_horizontal|center_vertical"
+                >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_buyerprofile"
+                android:layout_gravity="center_horizontal|center_vertical"/>
+
+
+                <TextView
+                    android:id="@+id/idTextViewNameProfileFarmer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="This is Soil Testing Project in which we are going to devolped soil test kit "
+                    android:layout_marginLeft="20dp"
+                    android:textSize="20sp"
+                    android:textColor="#000000"
+                    />
+
+
+            </LinearLayout>
+
+
+
+
+        </GridLayout>
+
+
+    </ScrollView>
+</LinearLayout>
+
+    <!--complete-->

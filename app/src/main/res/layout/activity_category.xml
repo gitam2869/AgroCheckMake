@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient1"
+    android:weightSum="2"
+    android:orientation="vertical"
+    tools:context=".CategoryActivity">
+
+    <TextView
+        android:id="@+id/idTextViewAreYouCategoryActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Are You...?"
+        android:layout_gravity="center"
+        android:layout_margin="15dp"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:textColor="#000000"/>
+
+        <LinearLayout
+            android:id="@+id/idLinearLayoutFarmerCategoryActivity"
+            android:layout_weight="1"
+            android:layout_height="0dp"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:background="@color/colorWhiteBackground">
+
+            <ImageView
+                android:id="@+id/idImageViewFarmerCategoryActivity"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/farmer2"/>
+
+        </LinearLayout>
+
+<!--    <Button-->
+<!--        android:id="@+id/idButtonFarmerCategoryActivity"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="@string/stringButtonFarmerCategoryActivity"-->
+<!--        android:layout_marginRight="50dp"-->
+<!--        android:layout_marginLeft="50dp"-->
+<!--        android:layout_marginBottom="20dp"-->
+<!--        android:textSize="18sp"-->
+<!--        android:background="#ffff"/>-->
+
+    <TextView
+        android:id="@+id/idButtonBuyerCategoryAcity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Farmer"
+        android:gravity="center"
+        android:layout_marginRight="50dp"
+        android:layout_marginLeft="50dp"
+        android:paddingBottom="16dp"
+        android:layout_marginBottom="20dp"
+        android:textSize="20sp"
+        android:background="#ffff"
+        android:textColor="#000000"
+
+        />
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:layout_height="0dp"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:background="@color/colorWhiteBackground">
+
+            <ImageView
+                android:layout_margin="8dp"
+                android:id="@+id/idImageVeiwBuyerCategoryActivity"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/businesman"/>
+
+        </LinearLayout>
+
+    <TextView
+        android:id="@+id/idButtonBuyerCategoryActivity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/stringButtonBuyerCategoryActivity"
+        android:gravity="center"
+        android:layout_marginRight="50dp"
+        android:layout_marginLeft="50dp"
+        android:paddingBottom="16dp"
+        android:layout_marginBottom="20dp"
+        android:textSize="20sp"
+        android:background="#ffff"
+        android:textColor="#000000"
+
+      />
+
+
+
+</LinearLayout>
+
+<!--complete-->
+
+
