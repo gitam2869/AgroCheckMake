@@ -1,11 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center_vertical|center_horizontal"
+    android:background="@drawable/gradient1"
     >
 
 
-</RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:background="#ffff"
+        android:layout_marginBottom="48dp"
+
+        >
+        <ImageButton
+            android:id="@+id/image"
+            android:layout_marginTop="48dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_no_selection"
+            android:background="#ffff"/>
+
+        <TextView
+            android:id="@+id/idTextViewNoInternet"
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="You Selected Nothing !!!"
+            android:textSize="24sp"
+            android:textColor="#000000"
+            android:textStyle="italic"
+            />
+
+        <Button
+            android:id="@+id/idButtonNoInternet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#27C219"
+            android:text="       Go  For  Selection       "
+            android:textColor="#ffff"
+            android:textSize="15sp"
+            android:layout_marginTop="60dp"
+
+            />
+    </LinearLayout>
+</LinearLayout>

@@ -7,11 +7,12 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 public class SocialMediaBuyerActivity extends AppCompatActivity implements View.OnClickListener
 {
-    private ImageView imageViewInstagram;
-    private ImageView imageViewFacebook;
+    private LinearLayout linearLayoutInstagram;
+    private LinearLayout linearLayoutFacebook;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -19,22 +20,22 @@ public class SocialMediaBuyerActivity extends AppCompatActivity implements View.
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_social_media_buyer);
 
-        imageViewInstagram = findViewById(R.id.idImageViewInstagramSocialMediaBuyer);
-        imageViewFacebook = findViewById(R.id.idImageViewFacebookSocialMediaBuyer);
+        linearLayoutInstagram = findViewById(R.id.idLinearLayoutInstagramSocialMediaBuyer);
+        linearLayoutFacebook = findViewById(R.id.idLinearLayoutFacebookSocialMediaBuyer);
 
-        imageViewInstagram.setOnClickListener(this);
-        imageViewFacebook.setOnClickListener(this);
+        linearLayoutInstagram.setOnClickListener(this);
+        linearLayoutFacebook.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View view)
     {
-        if(view == imageViewInstagram)
+        if(view == linearLayoutInstagram)
         {
             startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.instagram.com/agrocheckmake/?r=nametag")));
         }
 
-        if(view == imageViewFacebook)
+        if(view == linearLayoutFacebook)
         {
             startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/Agro-Chechmake-100551861527187/")));
         }

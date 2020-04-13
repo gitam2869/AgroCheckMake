@@ -21,7 +21,8 @@ public class HomePageBuyerActivity extends AppCompatActivity implements View.OnC
 
     LinearLayout linearLayoutBuyCrops;
     LinearLayout linearLayoutPostRequirement;
-    LinearLayout linearLayoutProfile;
+    LinearLayout linearLayoutMakeContract;
+    LinearLayout linearLayoutViewHistory;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -41,11 +42,14 @@ public class HomePageBuyerActivity extends AppCompatActivity implements View.OnC
 
         linearLayoutBuyCrops = findViewById(R.id.idLinearLayoutBuyCropsHomePageBuyer);
         linearLayoutPostRequirement = findViewById(R.id.idLinearLayoutPostRequirementHomePageBuyer);
-        linearLayoutProfile = findViewById(R.id.idLinearLayoutProfileBuyer);
+        linearLayoutMakeContract = findViewById(R.id.idLinearLayoutMakeContractBuyer);
+        linearLayoutViewHistory = findViewById(R.id.idLinearLayoutViewHistoryBuyer);
 
         linearLayoutBuyCrops.setOnClickListener(this);
         linearLayoutPostRequirement.setOnClickListener(this);
-        linearLayoutProfile.setOnClickListener(this);
+        linearLayoutMakeContract.setOnClickListener(this);
+        linearLayoutViewHistory.setOnClickListener(this);
+
     }
 
     @Override
@@ -63,9 +67,15 @@ public class HomePageBuyerActivity extends AppCompatActivity implements View.OnC
             startActivity(intent);
         }
 
-        if(view == linearLayoutProfile)
+        if(view == linearLayoutMakeContract)
         {
-            Intent intent = new Intent(this, ProfileBuyerActivity.class);
+            Intent intent = new Intent(this, MakeContractBuyerActivity.class);
+            startActivity(intent);
+        }
+
+        if(view == linearLayoutViewHistory)
+        {
+            Intent intent = new Intent(this, ViewHistoryBuyerActivity.class);
             startActivity(intent);
         }
     }
@@ -85,17 +95,98 @@ public class HomePageBuyerActivity extends AppCompatActivity implements View.OnC
         {
 
             case R.id.item1:
-                startActivity(new Intent(this,SocialMediaBuyerActivity.class));
+                startActivity(new Intent(this,ProfileBuyerActivity.class));
                 break;
 
             case R.id.item2:
-                SharedPrefManagerFarmer.getInstance(this).logout();
-                startActivity(new Intent(this, MainActivity.class));
-                finish();
+                startActivity(new Intent(this,SocialMediaBuyerActivity.class));
                 break;
+
+            case R.id.item3:
+                logoutBuyer();
+//                SharedPrefManagerFarmer.getInstance(this).logout();
+//                startActivity(new Intent(this, MainActivity.class));
+//                finish();
+                break;
+
+//            case R.id.item4:
+//                startActivity(new Intent(this,HomePageFarmerActivity.class));
+//                break;
             default:
         }
         return super.onOptionsItemSelected(item);
+    }
+
+
+    private void logoutBuyer()
+    {
+
+        // Create the object of
+        // AlertDialog Builder class
+        AlertDialog.Builder builder
+                = new AlertDialog
+                .Builder(HomePageBuyerActivity.this);
+
+        // Set the message show for the Alert time
+        builder.setMessage("Are you sure ot Logout ?");
+
+        // Set Alert Title
+        builder.setTitle("Alert !");
+
+        // Set Cancelable false
+        // for when the user clicks on the outside
+        // the Dialog Box then it will remain show
+        builder.setCancelable(false);
+
+        // Set the positive button with yes name
+        // OnClickListener method is use of
+        // DialogInterface interface.
+
+        builder
+                .setPositiveButton(
+                        "Yes",
+                        new DialogInterface
+                                .OnClickListener() {
+
+                            @Override
+                            public void onClick(DialogInterface dialog,
+                                                int which)
+                            {
+
+                                // When the user click yes button
+                                // then app will close
+//                                finish();
+                                SharedPrefManagerFarmer.getInstance(getApplicationContext()).logout();
+                                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                                finish();
+                            }
+                        });
+
+        // Set the Negative button with No name
+        // OnClickListener method is use
+        // of DialogInterface interface.
+        builder
+                .setNegativeButton(
+                        "No",
+                        new DialogInterface
+                                .OnClickListener() {
+
+                            @Override
+                            public void onClick(DialogInterface dialog,
+                                                int which)
+                            {
+
+                                // If user click no
+                                // then dialog box is canceled.
+                                dialog.cancel();
+                            }
+                        });
+
+        // Create the Alert dialog
+        AlertDialog alertDialog = builder.create();
+
+        // Show the Alert Dialog box
+        alertDialog.show();
     }
 
 

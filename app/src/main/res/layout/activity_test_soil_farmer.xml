@@ -8,65 +8,95 @@
     android:background="@drawable/gradient1"
     android:orientation="vertical"
     android:weightSum="10"
-    tools:context=".ProfileFarmerActivity">
+    tools:context=".TestSoilFarmerActivity">
 
 
-
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="42dp"
-        >
-        <GridLayout
-            android:layout_weight="10"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginBottom="48dp"
+        android:background="#ffff">
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:rowCount="2"
-            android:columnCount="1"
-            android:alignmentMode="alignMargins"
-            android:columnOrderPreserved="false"
-            android:paddingLeft="14dp"
-            android:paddingRight="14dp"
-            android:paddingTop="28dp"
-            android:paddingBottom="28dp"
-            android:layout_margin="28dp"
-            android:background="@color/colorWhiteBackground"
+            android:layout_height="match_parent"
+            android:background="@drawable/gradient1"
+            android:layout_margin="4dp"
+            android:padding="4dp"
             >
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:layout_gravity="center_horizontal|center_vertical"
+                android:background="#ffff"
+
                 >
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_buyerprofile"
-                android:layout_gravity="center_horizontal|center_vertical"/>
-
-
-                <TextView
-                    android:id="@+id/idTextViewNameProfileFarmer"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="This is Soil Testing Project in which we are going to devolped soil test kit "
-                    android:layout_marginLeft="20dp"
-                    android:textSize="20sp"
-                    android:textColor="#000000"
-                    />
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginBottom="32dp"
 
+                    >
+
+                    <ScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+
+                            >
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                >
+
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:src="@drawable/h1"
+                                    android:layout_gravity="center_horizontal|center_vertical"/>
+
+
+                                <TextView
+                                    android:id="@+id/idTextViewNameProfileFarmer"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:text="Our Hardware kit gives nutrient content, water content and moisture content of the soil sample. It is integrated with app and result will be displayed within 15 mins on mobile device which is connected with it."
+                                    android:textSize="20sp"
+                                    android:textColor="#000000"
+                                    android:layout_marginLeft="24dp"
+                                    android:layout_marginRight="24dp"
+                                    android:layout_marginTop="16dp"
+                                    android:layout_marginBottom="16dp"
+
+                                    />
+
+
+                            </LinearLayout>
+
+
+
+
+                        </LinearLayout>
+
+                    </ScrollView>
+
+                </LinearLayout>
 
             </LinearLayout>
 
 
+        </LinearLayout>
 
+    </LinearLayout>
 
-        </GridLayout>
-
-
-    </ScrollView>
 </LinearLayout>
 
     <!--complete-->

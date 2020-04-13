@@ -4,12 +4,16 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -36,12 +40,32 @@ public class SellCropListFarmerAdapter extends RecyclerView.Adapter<SellCropList
     }
 
     @Override
-    public void onBindViewHolder(@NonNull PRSListViewHolder holder, int position)
+    public void onBindViewHolder(@NonNull final PRSListViewHolder holder, int position)
     {
         SellCropFarmerInfo postCropData = sellCroList.get(position);
 
         String url = postCropData.getImage();
-        Picasso.get().load(url).resize(400,400).into(holder.imageViewUploadedImage);
+
+        Picasso.get().load(url).resize(400,400)
+                .into(holder.imageViewUploadedImage, new Callback()
+                {
+                    @Override
+                    public void onSuccess()
+                    {
+                        holder.progressBar.setVisibility(View.GONE);
+                        holder.imageViewUploadedImage.setVisibility(View.VISIBLE);
+                    }
+
+                    @Override
+                    public void onError(Exception e)
+                    {
+
+                    }
+                });
+
+//        Picasso.get().load(url).resize(400,400)
+//                .into(holder.imageViewUploadedImage new);
+
 
         holder.textViewname.setText("Crop Name : "+postCropData.getName());
         holder.textViewquantity.setText("Quantity : "+postCropData.getQuantity());
@@ -67,6 +91,7 @@ public class SellCropListFarmerAdapter extends RecyclerView.Adapter<SellCropList
     public interface OnItemClickListener
     {
         void onItemClick(int position);
+        void onItemClick1(int position);
     }
 
     public void setOnItemClickListener(OnItemClickListener listener)
@@ -84,6 +109,10 @@ public class SellCropListFarmerAdapter extends RecyclerView.Adapter<SellCropList
         TextView textViewbuyername;
         TextView textViewbuyernumber;
 
+        ImageButton buttonCancel;
+        Button buttonSave;
+        ProgressBar progressBar;
+
         public PRSListViewHolder(@NonNull View itemView, final OnItemClickListener listener)
         {
             super(itemView);
@@ -96,8 +125,12 @@ public class SellCropListFarmerAdapter extends RecyclerView.Adapter<SellCropList
             textViewbuyername = itemView.findViewById(R.id.idTextViewSellCropFarmerNameFarmer);
             textViewbuyernumber = itemView.findViewById(R.id.idTextViewSellCropFarmeNumberFarmer);
 
+            buttonCancel = itemView.findViewById(R.id.idButtonSellCropFarmerCancelFarmer);
+            buttonSave = itemView.findViewById(R.id.idButtonSellCropFarmerSaveFarmer);
 
-            itemView.setOnClickListener(new View.OnClickListener()
+            progressBar = itemView.findViewById(R.id.idProgressBarUploadedImageSellCropFarmer);
+
+            buttonCancel.setOnClickListener(new View.OnClickListener()
             {
                 @Override
                 public void onClick(View v)
@@ -109,6 +142,25 @@ public class SellCropListFarmerAdapter extends RecyclerView.Adapter<SellCropList
                         if(position != RecyclerView.NO_POSITION)
                         {
                             listener.onItemClick(position);
+
+                        }
+                    }
+                }
+            });
+
+
+            buttonSave.setOnClickListener(new View.OnClickListener()
+            {
+                @Override
+                public void onClick(View v)
+                {
+                    if(listener != null)
+                    {
+                        int position = getAdapterPosition();
+
+                        if(position != RecyclerView.NO_POSITION)
+                        {
+                            listener.onItemClick1(position);
 
                         }
                     }

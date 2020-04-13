@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -12,28 +12,46 @@
 
     <ImageView
         android:id="@+id/idImageViewLogoMainActivity"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
         android:layout_weight="1"
         android:src="@drawable/finalagrocheckmake2"
-        android:layout_marginBottom="40dp"
+        android:layout_marginTop="100dp"
         android:layout_marginLeft="60dp"
         android:layout_marginRight="60dp"
         />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignWithParentIfMissing="true"
+        android:layout_alignBottom="@+id/idImageViewLogoMainActivity"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="60dp"
+        android:layout_marginBottom="-32dp"
+        android:gravity="center"
+        android:text="In Every Farm,\nFor Every Buyer"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="italic"/>
 
     <Button
         android:id="@+id/idButtonNextMainActivity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="40dp"
         android:layout_marginLeft="50dp"
         android:layout_marginBottom="80dp"
         android:layout_marginRight="50dp"
-        android:text="@string/stringButtonNextMainActivity"
-        android:textSize="20sp"
+        android:text="Get Started"
+        android:layout_alignParentBottom="true"
+        android:textSize="18sp"
+        android:textColor="#303F9F"
         android:background="@color/colorButtonSameForAll"
         />
 
 
-</LinearLayout>
+</RelativeLayout>

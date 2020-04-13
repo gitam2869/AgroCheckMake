@@ -24,6 +24,8 @@ public class HomePageFarmerActivity extends AppCompatActivity implements View.On
     LinearLayout linearLayoutSellCrop;
     LinearLayout linearLayoutSelectBuyer;
     LinearLayout linearLayoutSettings;
+    LinearLayout linearLayoutViewContracts;
+    LinearLayout linearLayoutViewHistory;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -45,12 +47,16 @@ public class HomePageFarmerActivity extends AppCompatActivity implements View.On
         linearLayoutSellCrop = findViewById(R.id.idLinearLayoutSellCropHomePageFarmer);
         linearLayoutSelectBuyer = findViewById(R.id.idLinearLayoutSelectBuyerHomePageFarmer);
         linearLayoutSettings = findViewById(R.id.idLinearLayoutSettingsHomePageFarmer);
+        linearLayoutViewContracts = findViewById(R.id.idLinearLayoutViewContractsHomePageFarmer);
+        linearLayoutViewHistory = findViewById(R.id.idLinearLayoutHistoryHomePageFarmer);
 
 
         linearLayoutCropSelection.setOnClickListener(this);
         linearLayoutSellCrop.setOnClickListener(this);
         linearLayoutSelectBuyer.setOnClickListener(this);
         linearLayoutSettings.setOnClickListener(this);
+        linearLayoutViewContracts.setOnClickListener(this);
+        linearLayoutViewHistory.setOnClickListener(this);
     }
 
     @Override
@@ -76,8 +82,18 @@ public class HomePageFarmerActivity extends AppCompatActivity implements View.On
 
         if(view == linearLayoutSettings)
         {
-            Intent intent = new Intent(this, ExperContactsActivity.class);
+            Intent intent = new Intent(this, AgriculturalAdvisoryFarmerActivity.class);
             startActivity(intent);
+        }
+
+        if(view == linearLayoutViewContracts)
+        {
+            startActivity(new Intent(this,ViewContractsFarmerActivity.class));
+        }
+
+        if(view == linearLayoutViewHistory)
+        {
+            startActivity(new Intent(this, ViewHistoryFarmerActivity.class));
         }
     }
 
@@ -105,15 +121,92 @@ public class HomePageFarmerActivity extends AppCompatActivity implements View.On
                 break;
 
             case R.id.item3:
-                SharedPrefManagerBuyer.getInstance(this).logout();
-                startActivity(new Intent(this, MainActivity.class));
-                finish();
+                logoutFarmer();
+//                SharedPrefManagerBuyer.getInstance(this).logout();
+//                startActivity(new Intent(this, MainActivity.class));
+//                finish();
                 break;
+
+//            case R.id.item4:
+//                startActivity(new Intent(this,HomePageBuyerActivity.class));
+//                break;
 
             default:
         }
         return super.onOptionsItemSelected(item);
     }
+
+
+    private void logoutFarmer()
+    {
+        // Create the object of
+        // AlertDialog Builder class
+        AlertDialog.Builder builder
+                = new AlertDialog
+                .Builder(HomePageFarmerActivity.this);
+
+        // Set the message show for the Alert time
+        builder.setMessage("Are you sure to Logout ?");
+
+        // Set Alert Title
+        builder.setTitle("Alert !");
+
+        // Set Cancelable false
+        // for when the user clicks on the outside
+        // the Dialog Box then it will remain show
+        builder.setCancelable(true);
+
+        // Set the positive button with yes name
+        // OnClickListener method is use of
+        // DialogInterface interface.
+
+        builder
+                .setPositiveButton(
+                        "Yes",
+                        new DialogInterface
+                                .OnClickListener() {
+
+                            @Override
+                            public void onClick(DialogInterface dialog,
+                                                int which)
+                            {
+
+                                // When the user click yes button
+                                // then app will close
+//                                finish();
+                                SharedPrefManagerBuyer.getInstance(getApplicationContext()).logout();
+                                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                                finish();
+                            }
+                        });
+
+        // Set the Negative button with No name
+        // OnClickListener method is use
+        // of DialogInterface interface.
+        builder
+                .setNegativeButton(
+                        "No",
+                        new DialogInterface
+                                .OnClickListener() {
+
+                            @Override
+                            public void onClick(DialogInterface dialog,
+                                                int which)
+                            {
+
+                                // If user click no
+                                // then dialog box is canceled.
+                                dialog.cancel();
+                            }
+                        });
+
+        // Create the Alert dialog
+        AlertDialog alertDialog = builder.create();
+
+        // Show the Alert Dialog box
+        alertDialog.show();
+    }
+
 
 //    @Override
 //    public void onBackPressed()
@@ -140,7 +233,7 @@ public class HomePageFarmerActivity extends AppCompatActivity implements View.On
         // Set Cancelable false
         // for when the user clicks on the outside
         // the Dialog Box then it will remain show
-        builder.setCancelable(false);
+        builder.setCancelable(true);
 
         // Set the positive button with yes name
         // OnClickListener method is use of

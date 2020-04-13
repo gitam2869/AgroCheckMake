@@ -15,6 +15,7 @@ public class ProfileFarmerActivity extends AppCompatActivity implements View.OnC
     private TextView textViewEmail;
     private TextView textViewMobile;
     private TextView textViewLand;
+    private TextView textViewLandUnit;
     private TextView textViewAddress;
 
     private Button buttonLogout;
@@ -30,6 +31,7 @@ public class ProfileFarmerActivity extends AppCompatActivity implements View.OnC
         textViewEmail = findViewById(R.id.idTextViewEmailProfileFarmer);
         textViewMobile = findViewById(R.id.idTextViewMobileProfileFarmer);
         textViewLand = findViewById(R.id.idTextViewLandProfileFarmer);
+        textViewLandUnit = findViewById(R.id.idTextViewLandUnitProfileFarmer);
         textViewAddress = findViewById(R.id.idTextViewAddressProfileFarmer);
 
 //        buttonLogout = findViewById(R.id.idButtonLogoutProfileFarmer);
@@ -37,7 +39,8 @@ public class ProfileFarmerActivity extends AppCompatActivity implements View.OnC
         textViewName.setText("Name : "+ SharedPrefManagerFarmer.getInstance(this).getUserName());
         textViewEmail.setText("Email : "+SharedPrefManagerFarmer.getInstance(this).getUserEmail());
         textViewMobile.setText("Mobile No. : "+SharedPrefManagerFarmer.getInstance(this).getUserMobile());
-        textViewLand.setText("Land (in acres) : "+SharedPrefManagerFarmer.getInstance(this).getUserLand());
+        textViewLand.setText("Land Area : "+SharedPrefManagerFarmer.getInstance(this).getUserLand());
+        textViewLandUnit.setText(SharedPrefManagerFarmer.getInstance(this).getUserLandUnit());
         textViewAddress.setText("Address : "+SharedPrefManagerFarmer.getInstance(this).getUserAddress());
 
 //        buttonLogout.setOnClickListener(this);

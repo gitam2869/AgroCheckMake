@@ -49,4 +49,8 @@ dependencies {
     implementation 'com.squareup.picasso:picasso:2.71828'
 
 
+    //for floating action button
+    implementation 'com.android.support:design:29.0.0'
+
+
 }

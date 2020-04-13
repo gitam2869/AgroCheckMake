@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#28A328</color>
-    <color name="colorPrimaryDark">#268826</color>
+<!--    <color name="colorPrimary">#28A328</color>-->
+    <color name="colorPrimary">#369023</color>
+
+    <color name="colorPrimaryDark">#2c771d</color>
     <color name="colorAccent">#D81B60</color>
 
 <!--    color of next button in main Activity-->
@@ -18,5 +20,19 @@
 
 <!--    color for edittext Text-->
     <color name="colorOfEditTextText">#000000</color>
+
+<!--    <color name="colorOfBackgroundCardView">#369023</color>-->
+
+    <color name="colorOfBackgroundCardView">#FFFFFF</color>
+
+    <color name="colorOfRemoveButton">#EC1313</color>
+
+    <color name="colorOfAddButton">#369023</color>
+
+    <color name="colorOfAppName">#FF9100</color>
+    <color name="colorOfAppNameOtherCharacters">#303F9F</color>
+
+
+
 
 </resources>

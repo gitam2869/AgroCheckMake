@@ -1,36 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient1"
-    android:weightSum="4"
+    android:background="@color/colorWhiteBackground"
     android:orientation="vertical"
     tools:context=".NewAccountFarmerActivity">
 
-    <TextView
-        android:layout_weight="0.1"
-        android:id="@+id/idTextViewAreYouCategoryActivity"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Create New Account"
-        android:layout_gravity="center"
-        android:layout_marginTop="50dp"
-        android:layout_marginBottom="20dp"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:textColor="#000000"/>
-
     <LinearLayout
-        android:layout_weight="2.7"
-        android:layout_height="0dp"
+        android:layout_height="match_parent"
         android:layout_width="match_parent"
         android:orientation="vertical"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:background="@color/colorWhiteBackground">
+        android:layout_margin="32dp"
+        >
+
+        <TextView
+            android:id="@+id/idTextViewAreYouCategoryActivity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Create New Account"
+            android:layout_gravity="center"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:layout_marginBottom="32dp"/>
+
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -54,7 +51,7 @@
                 android:inputType="textCapWords"
                 android:textColor="#000000"
                 android:textColorHint="#B3000000"
-                android:textSize="16sp"
+                android:textSize="15sp"
                 android:layout_marginLeft="20dp"
                 />
         </LinearLayout>
@@ -81,7 +78,7 @@
                 android:inputType="textEmailAddress"
                 android:textColor="#000000"
                 android:textColorHint="#B3000000"
-                android:textSize="16sp"
+                android:textSize="15sp"
                 android:layout_marginLeft="20dp"
                 />
         </LinearLayout>
@@ -108,7 +105,7 @@
                 android:inputType="phone"
                 android:textColor="#000000"
                 android:textColorHint="#B3000000"
-                android:textSize="16sp"
+                android:textSize="15sp"
                 android:layout_marginLeft="20dp"
                 />
         </LinearLayout>
@@ -135,36 +132,58 @@
                 android:inputType="textPostalAddress"
                 android:textColor="#000000"
                 android:textColorHint="#B3000000"
-                android:textSize="16sp"
+                android:textSize="15sp"
                 android:layout_marginLeft="20dp"
                 />
         </LinearLayout>
+
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_margin="12dp">
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            android:layout_marginTop="12dp">
 
             <ImageView
-                android:id="@+id/idImageViewLandSignUpFarmer"
-                android:layout_width="35dp"
+                android:id="@+id/idImageViewLandSignUpFarmer"                android:layout_width="35dp"
                 android:layout_height="35dp"
-                android:src="@drawable/land"
-                />
+                android:src="@drawable/land"                />
 
             <EditText
                 android:id="@+id/idEditTextLandSignUpFarmer"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:background="@null"
-                android:hint="Enter Land In Acres"
-                android:inputType="phone"
+                android:hint="Enter Land Area"
+                android:inputType="number"
                 android:textColor="#000000"
                 android:textColorHint="#B3000000"
-                android:textSize="16sp"
+                android:textSize="15sp"
                 android:layout_marginLeft="20dp"
                 />
+
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="62dp">
+
+            <Spinner
+                android:id="@+id/idSpinnerLandSignUpFarmer"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:backgroundTint="#FF0000"
+                android:padding="5dp"
+                android:popupBackground="#FFFFFF" />
+
         </LinearLayout>
 
         <LinearLayout
@@ -174,70 +193,62 @@
             android:layout_margin="12dp">
 
             <ImageView
-                android:id="@+id/idImageViewPasswordSingUPFarmer"
+                android:id="@+id/idImageViewPasswordSingUpBuyer"
                 android:layout_width="35dp"
                 android:layout_height="35dp"
                 android:src="@drawable/ic_lock_black_24dp"
                 />
 
             <EditText
-                android:id="@+id/idEditTextPasswordSignUpFarmer"
-                android:layout_width="match_parent"
+                android:id="@+id/idEditTextPasswordSignUpFarmer"                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@null"
                 android:hint="Create Password"
                 android:inputType="textPassword"
                 android:textColor="#000000"
                 android:textColorHint="#B3000000"
-                android:textSize="16sp"
+                android:textSize="15sp"
                 android:layout_marginLeft="20dp"
                 />
         </LinearLayout>
 
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_weight="0.6"
-        android:layout_height="0dp"
-        android:layout_width="match_parent"
-        android:orientation="vertical"
-        >
-
-        <Button
-            android:id="@+id/idButtonSubmitFarmer"
-            android:layout_width="match_parent"
+        <LinearLayout
             android:layout_height="wrap_content"
-            android:text="Submit"
-            android:layout_marginRight="20dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginBottom="20dp"
-            android:background="@color/colorButtonSameForAll"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_weight="0.6"
-        android:layout_height="0dp"
-        android:layout_width="match_parent"
-        android:orientation="vertical"
-       >
-
-        <Button
-            android:id="@+id/idButtonBackSignUpFarmer"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Back"
-            android:layout_marginRight="20dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginBottom="20dp"
-            android:background="@color/colorButtonSameForAll"/>
+            android:orientation="vertical"
+            android:layout_marginTop="48dp"
+            >
+
+            <Button
+                android:id="@+id/idButtonSubmitFarmer"                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Submit"
+                android:textColor="#303F9F"
+                android:textSize="18sp"
+                android:layout_marginBottom="48dp"
+                android:background="@color/colorButtonSameForAll"/>
+
+        </LinearLayout>
+
+<!--        <LinearLayout-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:orientation="vertical"-->
+<!--            android:layout_marginTop="64dp"-->
+<!--            >-->
+
+<!--            <Button-->
+<!--                android:id="@+id/idButtonBackSignUpFarmer"                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Back"-->
+<!--                android:background="@color/colorButtonSameForAll"/>-->
+
+<!--        </LinearLayout>-->
 
     </LinearLayout>
 
 
 
-
-</LinearLayout>
+</ScrollView>
 
 

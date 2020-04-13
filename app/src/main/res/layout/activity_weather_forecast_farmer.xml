@@ -7,160 +7,201 @@
     android:layout_height="match_parent"
     android:background="@drawable/gradient1"
     android:orientation="vertical"
-    android:weightSum="10"
-    tools:context=".HomePageBuyerActivity">
+    tools:context=".WeatherForecastFarmerActivity">
 
-    <RelativeLayout
-        android:layout_weight="1.8"
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="#ffff"
+        android:layout_marginBottom="48dp">
 
-        <TextView
-            android:id="@+id/idTextViewDateFarmerActivity"
-            android:text="Date"
-            android:textSize="26sp"
-            android:textColor="#BF360C"
-            android:layout_centerInParent="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
 
-    </RelativeLayout>
-
-    <GridLayout
-        android:layout_weight="8.2"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:rowCount="3"
-        android:columnCount="1"
-        android:alignmentMode="alignMargins"
-        android:columnOrderPreserved="false"
-        android:layout_marginBottom="100dp"
-        android:paddingLeft="50dp"
-        android:paddingRight="50dp"
-        android:layout_marginTop="16dp"
-
-        >
-
-        <!-- Row 1 Column 1-->
-
-        <androidx.cardview.widget.CardView
-            android:layout_height="0dp"
-            android:layout_width="0dp"
-            android:layout_columnWeight="1"
-            android:layout_rowWeight="1"
-            android:layout_margin="16dp"
             >
 
             <LinearLayout
-                android:id="@+id/idLinearLayoutBuyCropsHomePageBuyer"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
-                android:layout_marginTop="10dp"
-                android:layout_gravity="center_horizontal|center_vertical"
+                android:layout_marginTop="32dp"
                 >
-
-                <ImageView
-                    android:src="@drawable/ic_weatherforecastsun"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-
-                <TextView
-                    android:id="@+id/idTextViewSunFarmerActivity"
-                    android:text="24 C"
-                    android:textColor="@android:color/black"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
+                <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"/>
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/idTextViewDateFarmerActivity"
+                        android:text="Date"
+                        android:textSize="26sp"
+                        android:textColor="#BF360C"
+                        android:layout_centerInParent="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent" />
+
+                </RelativeLayout>
+
+                <GridLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:alignmentMode="alignMargins"
+                    android:columnCount="1"
+                    android:columnOrderPreserved="false"
+                    android:rowCount="5"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginBottom="32dp"
+                    android:layout_marginRight="64dp"
+                    android:layout_marginLeft="64dp"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    >
+
+                    <!-- Row 1 Column 1-->
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_rowWeight="1"
+                        android:layout_columnWeight="1"
+                        android:layout_margin="16dp"
+                        app:cardBackgroundColor="@color/colorOfBackgroundCardView">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:background="@drawable/selector">
+
+                            <LinearLayout
+                                android:id="@+id/idLinearLayoutTestSoilCropSelectionFarmer"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center_horizontal|center_vertical"
+                                android:layout_margin="24dp"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal"
+                                    android:src="@drawable/ic_weatherforecastsun"/>
+                                <TextView
+                                    android:id="@+id/idTextViewSunFarmerActivity"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center"
+                                    android:textColor="#000000"
+                                    android:textSize="18sp"
+                                    android:textStyle="bold" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <!-- Row 1 Column 2-->
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_rowWeight="1"
+                        android:layout_columnWeight="1"
+                        android:layout_margin="16dp"
+                        app:cardBackgroundColor="@color/colorOfBackgroundCardView"
+
+                        >
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:background="@drawable/selector">
+
+                            <LinearLayout
+                                android:id="@+id/idLinearLayoutWeatherForecastCropSelectionFarmer"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal|center_vertical"
+                                android:layout_margin="24dp"
+
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal"
+                                    android:src="@drawable/ic_weatherforecasthumidity"/>
+                                <TextView
+                                    android:id="@+id/idTextViewHumidityFarmerActivity"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center"
+                                    android:textColor="#000000"
+                                    android:textSize="18sp"
+                                    android:textStyle="bold" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <!-- Row 1 Column 3-->
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_rowWeight="1"
+                        android:layout_columnWeight="1"
+                        android:layout_margin="16dp"
+                        app:cardBackgroundColor="@color/colorOfBackgroundCardView"
+
+                        >
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:background="@drawable/selector">
+
+                            <LinearLayout
+                                android:id="@+id/idLinearLayoutMarketTrendsCropSelectionFarmer"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal|center_vertical"
+                                android:layout_margin="24dp"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal"
+                                    android:src="@drawable/ic_weatherforecastrain"/>
+                                <TextView
+                                    android:id="@+id/idTextViewCloudsFarmerActivity"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center"
+                                    android:textColor="#000000"
+                                    android:textSize="18sp"
+                                    android:textStyle="bold" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+
+
+                </GridLayout>
 
             </LinearLayout>
 
-        </androidx.cardview.widget.CardView>
 
-        <!-- Row 1 Column 2-->
+        </ScrollView>
 
-        <androidx.cardview.widget.CardView
-            android:layout_height="0dp"
-            android:layout_width="0dp"
-            android:layout_columnWeight="1"
-            android:layout_rowWeight="1"
-            android:layout_marginLeft="16dp"
-            android:layout_marginBottom="16dp"
-            android:layout_marginRight="16dp"
-            >
-
-            <LinearLayout
-                android:id="@+id/idLinearLayoutPostRequirementHomePageBuyer"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:layout_marginTop="10dp"
-                android:layout_gravity="center_horizontal|center_vertical">
-
-                <ImageView
-                    android:src="@drawable/ic_weatherforecasthumidity"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-
-                <TextView
-                    android:id="@+id/idTextViewHumidityFarmerActivity"
-                    android:text="24"
-                    android:textColor="@android:color/black"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"/>
-
-            </LinearLayout>
-
-        </androidx.cardview.widget.CardView>
-
-        <!-- Row 1 Column 2-->
-
-        <androidx.cardview.widget.CardView
-            android:layout_height="0dp"
-            android:layout_width="0dp"
-            android:layout_columnWeight="1"
-            android:layout_rowWeight="1"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            >
-
-            <LinearLayout
-                android:id="@+id/idLinearLayoutProfileBuyer"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:layout_marginTop="10dp"
-                android:layout_gravity="center_horizontal|center_vertical">
-
-                <ImageView
-                    android:src="@drawable/ic_weatherforecastrain"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-
-                <TextView
-                    android:id="@+id/idTextViewCloudsFarmerActivity"
-                    android:text="Clear Sky"
-                    android:textColor="@android:color/black"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"/>
-
-            </LinearLayout>
-
-        </androidx.cardview.widget.CardView>
-
-
-
-    </GridLayout>
+    </LinearLayout>
 
 </LinearLayout>
+
+    <!--complete-->

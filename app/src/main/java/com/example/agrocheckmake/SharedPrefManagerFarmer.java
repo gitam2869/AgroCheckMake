@@ -2,7 +2,6 @@ package com.example.agrocheckmake;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.widget.Toast;
 
 public class SharedPrefManagerFarmer
 {
@@ -20,6 +19,9 @@ public class SharedPrefManagerFarmer
     private static final String KEY_USER_ADDRESS = "useraddress";
     private static final String KEY_USER_CATEGORY = "usercategory";
 
+    private static final String KEY_USER_FARM_LAND_UNIT = "userlandunit";
+
+    private static final String KEY_USER_CODE_ONLY_ONCE = "codestate";
 
 
 
@@ -38,7 +40,14 @@ public class SharedPrefManagerFarmer
         return mInstance;
     }
 
-    public boolean userLogin(int id, String email,String fullname,String mobile,String land,String address)
+    public boolean userLogin(
+            int id,
+            String email,
+            String fullname,
+            String mobile,
+            String land,
+            String address
+    )
     {
         SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME,Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
@@ -55,6 +64,16 @@ public class SharedPrefManagerFarmer
         return true;
     }
 
+    public boolean userFarmUnit(String landUnit)
+    {
+        SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME,Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+
+        editor.putString(KEY_USER_FARM_LAND_UNIT,landUnit);
+
+        editor.apply();
+        return true;
+    }
 
 
     public boolean isLoggedIn()
@@ -130,6 +149,12 @@ public class SharedPrefManagerFarmer
     {
         SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
         return sharedPreferences.getString(KEY_USER_CATEGORY , null);
+    }
+
+    public String getUserLandUnit()
+    {
+        SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
+        return sharedPreferences.getString(KEY_USER_FARM_LAND_UNIT, null);
     }
 
 

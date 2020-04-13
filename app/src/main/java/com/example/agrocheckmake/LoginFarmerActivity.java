@@ -4,9 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.text.SpannableString;
+import android.text.Spanned;
 import android.text.TextUtils;
+import android.text.style.ForegroundColorSpan;
 import android.util.Patterns;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -29,15 +34,19 @@ import java.util.Map;
 
 public class LoginFarmerActivity extends AppCompatActivity implements View.OnClickListener
 {
+
+    private TextView textViewAppName;
     private EditText editTextEmail;
     private EditText editTextPassword;
     private Button buttonLogin;
     private ImageView imageViewGoogle;
     private Button buttonCreateNewAccount;
-    private Button buttonBack;
+    private TextView textViewForgotPassword;
+
 
     private ProgressDialog progressDialog;
 
+    public String stringEmail;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -46,16 +55,30 @@ public class LoginFarmerActivity extends AppCompatActivity implements View.OnCli
 
         getSupportActionBar().hide();
 
+
+        textViewAppName = findViewById(R.id.idTextViewAppNameLoginActivityFarmer);
         editTextEmail = findViewById(R.id.idEditTextEmailLoginActivityFarmer);
         editTextPassword = findViewById(R.id.idEditTextPasswordLoginActivityFarmer);
         buttonLogin = findViewById(R.id.idButtonLoginLoginActivityFarmer);
 //        imageViewGoogle = findViewById(R.id.idImageViewGoogleSignUpLoginActivityFarmer);
         buttonCreateNewAccount = findViewById(R.id.idButtonCreateNewAccoutnLoginActivityFarmer);
-        buttonBack = findViewById(R.id.idButtonBackLoginActivityFarmer);
+        textViewForgotPassword = findViewById(R.id.idTextViewForgotPasswordLoginActivityFarmer);
 
         buttonLogin.setOnClickListener(this);
         buttonCreateNewAccount.setOnClickListener(this);
-        buttonBack.setOnClickListener(this);
+        textViewForgotPassword.setOnClickListener(this);
+
+        String appName = "Agro CheckMake";
+        SpannableString spannableString = new SpannableString(appName);
+        ForegroundColorSpan foregroundColorSpan = new ForegroundColorSpan(getResources().getColor(R.color.colorOfAppName));
+        ForegroundColorSpan foregroundColorSpan1 = new ForegroundColorSpan(getResources().getColor(R.color.colorOfAppNameOtherCharacters));
+        ForegroundColorSpan foregroundColorSpan2 = new ForegroundColorSpan(getResources().getColor(R.color.colorOfAppNameOtherCharacters));
+
+        spannableString.setSpan(foregroundColorSpan,10,11, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        spannableString.setSpan(foregroundColorSpan1,0,10, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        spannableString.setSpan(foregroundColorSpan2,11,14, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+        textViewAppName.setText(spannableString);
 
         progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("Please wait...");
@@ -76,26 +99,25 @@ public class LoginFarmerActivity extends AppCompatActivity implements View.OnCli
             startActivity(intent);
         }
 
-        if(view == buttonBack)
+        if(view == textViewForgotPassword)
         {
-            Intent intent = new Intent(this,CategoryActivity.class);
+            Intent intent = new Intent(this, ForgotPasswordActivity.class);
+            intent.putExtra("user", "Farmer");
+            intent.putExtra("email", stringEmail);
             startActivity(intent);
+            finish();
         }
+
     }
 
     private void farmerLogin()
     {
         final String email = editTextEmail.getText().toString().trim();
         final String password = editTextPassword.getText().toString().trim();
-
+        stringEmail = email;
         if(email.length() == 0)
         {
             editTextEmail.setError("ENTER EMAIL ID");
-            return;
-        }
-        if(email.length() > 0 && !isValidEmail(email))
-        {
-            editTextEmail.setError("ENTER VALID EMAIL ID");
             return;
         }
 
@@ -120,7 +142,7 @@ public class LoginFarmerActivity extends AppCompatActivity implements View.OnCli
 
                         Toast.makeText(
                                 getApplicationContext(),
-                                "Invalid Username or Password",
+                                response,
                                 Toast.LENGTH_LONG
                         ).show();
 
@@ -131,24 +153,37 @@ public class LoginFarmerActivity extends AppCompatActivity implements View.OnCli
                             JSONArray jsonArray = new JSONArray(response);
                             JSONObject obj = jsonArray.getJSONObject(0);
 
-                            SharedPrefManagerFarmer.getInstance(getApplicationContext())
-                                    .userLogin(
-                                            obj.getInt("id"),
-                                            obj.getString("email"),
-                                            obj.getString("fullname"),
-                                            obj.getString("mobile"),
-                                            obj.getString("landacres"),
-                                            obj.getString("address")
-                                    );
-//                            Toast.makeText(getApplicationContext(), obj.getString("email"), Toast.LENGTH_LONG).show();
-                            Toast.makeText(
-                                    getApplicationContext(),
-                                    "Login Successfully",
-                                    Toast.LENGTH_LONG
-                            ).show();
+                            if(!obj.getBoolean("error"))
+                            {
+                                SharedPrefManagerFarmer.getInstance(getApplicationContext())
+                                        .userLogin(
+                                                obj.getInt("id"),
+                                                obj.getString("email"),
+                                                obj.getString("fullname"),
+                                                obj.getString("mobile"),
+                                                obj.getString("landacres"),
+                                                obj.getString("address")
+                                        );
+                                Toast toast = Toast.makeText(
+                                        getApplicationContext(),
+                                        "Login Successfully",
+                                        Toast.LENGTH_LONG);
+                                toast.setGravity(Gravity.CENTER,0,0);
+                                toast.show();
 
-                            startActivity(new Intent(getApplicationContext(),HomePageFarmerActivity.class));
-                            finish();
+                                startActivity(new Intent(getApplicationContext(),HomePageFarmerActivity.class));
+                                finish();
+                            }
+                            else
+                            {
+                                Toast toast = Toast.makeText(
+                                        getApplicationContext(),
+                                        obj.getString("message"),
+                                        Toast.LENGTH_LONG);
+                                toast.setGravity(Gravity.CENTER,0,0);
+                                toast.show();
+                            }
+
 
                         }
                         catch (JSONException e)

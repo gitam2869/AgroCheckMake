@@ -2,31 +2,39 @@ package com.example.agrocheckmake;
 
 public class SellCropFarmerInfo
 {
+    private String id;
     private String image;
     private String name;
     private String quantity;
     private String rate;
     private String description;
-    private String buyername;
-    private String buyernumber;
+    private String farmername;
+    private String farmernumber;
 
     public SellCropFarmerInfo(
+            String id,
             String image,
             String name,
             String quantity,
             String rate,
             String description,
-            String buyername,
-            String buyernumber
+            String farmername,
+            String farmernumber
             )
     {
+        this.id = id;
         this.image = image;
         this.name = name;
         this.quantity = quantity;
         this.rate = rate;
         this.description = description;
-        this.buyername = buyername;
-        this.buyernumber = buyernumber;
+        this.farmername = farmername;
+        this.farmernumber = farmernumber;
+    }
+
+    public String getId()
+    {
+        return id;
     }
 
     public String getImage()
@@ -56,11 +64,11 @@ public class SellCropFarmerInfo
 
     public String getFarmername()
     {
-        return buyername;
+        return farmername;
     }
 
     public String getFarmernumber()
     {
-        return buyernumber;
+        return farmernumber;
     }
 }

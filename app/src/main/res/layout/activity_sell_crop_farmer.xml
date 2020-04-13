@@ -10,238 +10,287 @@
     android:weightSum="10"
     tools:context=".SellCropFarmerActivity">
 
-<!--    <RelativeLayout-->
-<!--        android:layout_weight="2"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="0dp">-->
-
-<!--        <TextView-->
-<!--            android:id="@+id/textGrid"-->
-<!--            android:text="Welcome"-->
-<!--            android:textSize="34sp"-->
-<!--            android:textColor="#BF360C"-->
-<!--            android:layout_centerInParent="true"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content" />-->
-
-<!--    </RelativeLayout>-->
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    <GridLayout
-        android:layout_weight="10"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:rowCount="2"
-        android:columnCount="1"
-        android:alignmentMode="alignMargins"
-        android:columnOrderPreserved="false"
-        android:paddingLeft="14dp"
-        android:paddingRight="14dp"
-        android:paddingTop="14dp"
-        android:paddingBottom="36dp"
-        android:layout_margin="30dp"
-        android:background="@color/colorWhiteBackground"
-        >
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_margin="15dp">
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginBottom="48dp"
+            android:background="#ffff">
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_cropname"
-                />
-
-            <EditText
-                android:id="@+id/idEditTextCropNameSellCropFarmerActivity"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@null"
-                android:hint="Enter Crop Name"
-                android:inputType="textCapWords"
-                android:textColor="#000000"
-                android:textColorHint="#B3000000"
-                android:textSize="16sp"
-                android:layout_marginLeft="20dp"
-                />
+                android:background="@drawable/gradient1"
+                android:layout_margin="4dp"
+                android:padding="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#ffff"
+                    >
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="16dp">
+
+                        <ScrollView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                >
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:layout_margin="15dp">
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:src="@drawable/ic_cropname"
+                                        />
+
+                                    <EditText
+                                        android:id="@+id/idEditTextCropNameSellCropFarmerActivity"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:background="@null"
+                                        android:hint="Enter Crop Name"
+                                        android:inputType="textCapWords"
+                                        android:textColor="#000000"
+                                        android:textColorHint="#B3000000"
+                                        android:textSize="16sp"
+                                        android:layout_marginLeft="20dp"
+                                        />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:layout_marginLeft="15dp"
+                                    android:layout_marginRight="15dp"
+                                    android:layout_marginTop="15dp">
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:src="@drawable/ic_cropquantitybag"
+                                        />
+
+                                    <EditText
+                                        android:id="@+id/idEditTextQuantitySellCropFarmerActivity"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="match_parent"
+                                        android:background="@null"
+                                        android:hint="Enter Crop Quantity   "
+                                        android:inputType="number"
+                                        android:textColor="#000000"
+                                        android:textColorHint="#B3000000"
+                                        android:textSize="16sp"
+                                        android:layout_marginLeft="20dp"
+                                        />
+
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:layout_marginLeft="62dp">
+
+                                    <Spinner
+                                        android:id="@+id/idSpinnerCropQuantitySellCropFarmerActivity"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="match_parent"
+                                        android:layout_gravity="center_vertical|center_horizontal"
+                                        android:backgroundTint="#FF0000"
+                                        android:padding="5dp"
+                                        android:popupBackground="#FFFFFF" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:layout_marginLeft="15dp"
+                                    android:layout_marginRight="15dp"
+                                    android:layout_marginTop="15dp">
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:src="@drawable/ic_croprate"
+                                        />
+
+                                    <EditText
+                                        android:id="@+id/idEditTextRateSellCropFarmerActivity"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="match_parent"
+                                        android:background="@null"
+                                        android:hint="Enter Crop Rate   "
+                                        android:inputType="phone"
+                                        android:textColor="#000000"
+                                        android:textColorHint="#B3000000"
+                                        android:textSize="16sp"
+                                        android:layout_marginLeft="20dp"
+                                        />
+
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:layout_marginLeft="62dp">
+
+                                    <Spinner
+                                        android:id="@+id/idSpinnerCropRateSellCropFarmerActivity"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="match_parent"
+                                        android:layout_gravity="center_vertical|center_horizontal"
+                                        android:backgroundTint="#FF0000"
+                                        android:padding="5dp"
+                                        android:popupBackground="#FFFFFF" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:layout_margin="15dp"
+                                    >
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:src="@drawable/ic_cropdescription"
+                                        />
+
+                                    <EditText
+                                        android:id="@+id/idEditTextCropDescriptionFarmerActivity"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:background="@null"
+                                        android:hint="Enter Crop Description"
+                                        android:inputType="textMultiLine"
+                                        android:textColor="#000000"
+                                        android:textColorHint="#B3000000"
+                                        android:textSize="16sp"
+                                        android:layout_marginLeft="20dp"
+                                        />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:layout_margin="15dp"
+                                    android:gravity="center_horizontal|center"
+                                    >
+
+
+                                   <ImageView
+                                       android:id="@+id/idImageViewUploadImageSellCropFarmerActivity"
+                                       android:layout_width="50dp"
+                                       android:layout_height="wrap_content"
+                                       android:visibility="gone"
+                                       />
+
+
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:layout_marginLeft="15dp"
+                                    android:layout_marginRight="15dp"
+                                    android:layout_marginBottom="15dp"
+
+
+                                    >
+
+
+                                  <Button
+                                      android:id="@+id/idButtonUploadImagesSellCropFarmerActivity"
+                                      android:layout_width="match_parent"
+                                      android:layout_height="match_parent"
+                                      android:background="#87CEEB"
+                                      android:drawableLeft="@drawable/ic_uploadimages"
+                                      android:text="Upload Image"
+                                      android:gravity="center"
+                                      android:paddingLeft="14dp"
+                                      android:onClick="selectImage"
+                                      />
+
+
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:layout_margin="15dp"
+                                    >
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="* This Post will only for last seven days"
+                                        android:layout_gravity="center"
+                                        android:textSize="14sp"
+                                        android:textColor="@color/colorTextViewFarmerBuyerLoginActivity"
+                                        />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:layout_margin="15dp"
+
+                                    >
+
+                                    <Button
+                                        android:id="@+id/idButtonSellCropSellCropFarmerActivity"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:background="#00E676"
+                                        android:text="Sell Your crop"
+                                        android:textSize="18sp"
+                                        android:textColor="#303F9F"
+                                        android:layout_marginTop="16dp"
+                                        android:layout_marginBottom="48dp"/>
+
+
+                                </LinearLayout>
+
+
+                            </LinearLayout>
+
+                        </ScrollView>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
         </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_margin="15dp">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_cropquantitybag"
-                />
-
-            <EditText
-                android:id="@+id/idEditTextQuantitySellCropFarmerActivity"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@null"
-                android:hint="Enter Crop Quantity"
-                android:inputType="textCapWords"
-                android:textColor="#000000"
-                android:textColorHint="#B3000000"
-                android:textSize="16sp"
-                android:layout_marginLeft="20dp"
-                />
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_margin="15dp">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_croprate"
-                />
-
-            <EditText
-                android:id="@+id/idEditTextRateSellCropFarmerActivity"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@null"
-                android:hint="Enter Crop Rate "
-                android:inputType="textCapWords"
-                android:textColor="#000000"
-                android:textColorHint="#B3000000"
-                android:textSize="16sp"
-                android:layout_marginLeft="20dp"
-                />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_margin="15dp"
-            >
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_cropdescription"
-                />
-
-            <EditText
-                android:id="@+id/idEditTextCropDescriptionFarmerActivity"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@null"
-                android:hint="Enter Crop Description"
-                android:inputType="textMultiLine"
-                android:textColor="#000000"
-                android:textColorHint="#B3000000"
-                android:textSize="16sp"
-                android:layout_marginLeft="20dp"
-                />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_margin="15dp"
-            android:gravity="center_horizontal|center"
-            >
-
-
-           <ImageView
-               android:id="@+id/idImageViewUploadImageSellCropFarmerActivity"
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               android:visibility="gone"
-               android:src="@drawable/ic_weatherforecastrain"/>
-
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
-            android:layout_marginBottom="15dp"
-
-            >
-
-
-          <Button
-              android:id="@+id/idButtonUploadImagesSellCropFarmerActivity"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:background="#87CEEB"
-              android:drawableLeft="@drawable/ic_uploadimages"
-              android:text="Upload Images"
-              android:gravity="center"
-              android:paddingLeft="14dp"
-              android:onClick="selectImage"
-              />
-
-
-
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_margin="15dp"
-            >
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="* This Post will only for last seven days"
-                android:layout_gravity="center"
-                android:textSize="14sp"
-                android:textColor="@color/colorTextViewFarmerBuyerLoginActivity"
-                />
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_margin="15dp"
-            >
-
-            <Button
-                android:id="@+id/idButtonSellCropSellCropFarmerActivity"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#00E676"
-                android:text="Sell Your crop"
-                android:textSize="18sp"
-                android:textColor="#7B1FA2"
-                android:layout_marginTop="13.15dp"/>
-<!--                android:onClick="saveData"-->
-
-
-        </LinearLayout>
-
-
-
-
-    </GridLayout>
-    </ScrollView>
 
 </LinearLayout>
 

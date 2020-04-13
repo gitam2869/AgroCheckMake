@@ -10,4 +10,26 @@
 
     <!--    String of Buyer in Category Activity-->
     <string name="stringButtonBuyerCategoryActivity">Buyer</string>
+
+    <string name="channel_name">AgroCheckMake Channel</string>
+    <string name="channel_description">Agro Description</string>
+
+    <string name="stringOfForgotPassowrd"><u>Forgot Password?</u></string>
+
+
+    <string-array name="arrayOfUnitsQuantity">
+        <item>Kg</item>
+        <item>Quintle</item>
+        <item>Tonne</item>
+    </string-array>
+
+    <string-array name="arrayOfUnitsRate">
+        <item>Rs/Kg</item>
+        <item>Rs/Quintle</item>
+        <item>Rs/Tonne</item>
+        <item>Rs/Dozen</item>
+    </string-array>
+
+
+    <!--    <string name="Rs">Enter Crop Rate</string>-->
 </resources>

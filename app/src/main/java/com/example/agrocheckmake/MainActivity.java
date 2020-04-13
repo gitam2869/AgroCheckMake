@@ -1,11 +1,16 @@
 package com.example.agrocheckmake;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
+import android.Manifest;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
@@ -21,6 +26,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button buttonNext;
     private ImageView imageViewLogo;
 
+    private static final int STORAGE_PERMISSION_CODE = 4565;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -29,7 +37,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if(!isConnected())
         {
 
-            setContentView(R.layout.no_internet);
+            setContentView(R.layout.main_no_internet);
             getSupportActionBar().hide();
             alertMessage();
             return;
@@ -62,6 +70,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         getSupportActionBar().hide();
 
+        requestStoragePermission();
+
         buttonNext = findViewById(R.id.idButtonNextMainActivity);
         imageViewLogo = findViewById(R.id.idImageViewLogoMainActivity);
 
@@ -72,7 +82,40 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
     }
-//    @Override
+
+    private void requestStoragePermission()
+    {
+
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED)
+            return;
+
+        if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.READ_EXTERNAL_STORAGE))
+        {
+            //If the user has denied the permission previously your code will come to this block
+            //Here you can explain why you need this permission
+            //Explain here why you need this permission
+        }
+        ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, STORAGE_PERMISSION_CODE);
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults)
+    {
+        if (requestCode == STORAGE_PERMISSION_CODE)
+        {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED)
+            {
+                Toast.makeText(this, "Permission granted now you can read the storage", Toast.LENGTH_LONG).show();
+
+            }
+            else
+            {
+                Toast.makeText(this, "Oops you just denied the permission", Toast.LENGTH_LONG).show();
+            }
+        }
+    }
+
+    //    @Override
 //    public void onBackPressed()
 //    {
 //        moveTaskToBack(true);

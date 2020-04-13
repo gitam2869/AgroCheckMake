@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.agrocheckmake">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <uses-permission android:name="android.permission.INTERNET" />
+
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
-    <!--    <uses-permission android:name="android.permission.INTERNET" />-->
-
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <!-- <uses-permission android:name="android.permission.INTERNET" /> -->
+    <!-- <uses-permission android:name="android.permission.FOREGROUND_SERVICE" /> -->
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
-
 
     <application
         android:allowBackup="true"
@@ -20,19 +22,69 @@
         android:networkSecurityConfig="@xml/network_security_config"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".ForgotPasswordActivity"></activity>
+        <activity
+            android:name=".SelectBuyCropListBuyerActivity"
+            android:label="Crops to Buy"
+            android:parentActivityName=".ViewHistoryBuyerActivity" />
+        <activity
+            android:name=".PostedCreateContractListBuyerActivity"
+            android:label="Crop Contract List"
+            android:parentActivityName=".ViewHistoryBuyerActivity" />
+        <activity
+            android:name=".PostedCropRequirementListBuyerActivity"
+            android:label="Suggested Requirements"
+            android:parentActivityName=".ViewHistoryBuyerActivity" />
+        <activity
+            android:name=".SelectCreateContractListFarmerActivity"
+            android:label="Crop Cotract List"
+            android:parentActivityName=".ViewHistoryFarmerActivity" />
+        <activity
+            android:name=".SelectPostCropListFarmerActivity"
+            android:label="Crop Requirement List"
+            android:parentActivityName=".ViewHistoryFarmerActivity" />
+        <activity
+            android:name=".SellingCropListFarmerActivity"
+            android:label="Crops To Sell"
+            android:parentActivityName=".ViewHistoryFarmerActivity" />
+        <activity
+            android:name=".ViewHistoryBuyerActivity"
+            android:label="View History"
+            android:parentActivityName=".HomePageBuyerActivity" />
+        <activity
+            android:name=".MakeContractBuyerActivity"
+            android:label="Create Contract"
+            android:parentActivityName=".HomePageBuyerActivity" />
+        <activity
+            android:name=".ViewHistoryFarmerActivity"
+            android:label="View History"
+            android:parentActivityName=".HomePageFarmerActivity" />
+        <activity
+            android:name=".ViewContractsFarmerActivity"
+            android:label="View Contract"
+            android:parentActivityName=".HomePageFarmerActivity" />
+        <activity
+            android:name=".VideoAdvisoryActivity"
+            android:label="Video Advisory"
+            android:parentActivityName=".AgriculturalAdvisoryFarmerActivity" />
+        <activity
+            android:name=".AgriculturalAdvisoryFarmerActivity"
+            android:label="Agricultural Advisory"
+            android:parentActivityName=".HomePageFarmerActivity" />
         <activity
             android:name=".SocialMediaBuyerActivity"
             android:label="Connect With Us"
-            android:parentActivityName=".SocialMediaBuyerActivity"></activity>
+            android:parentActivityName=".SocialMediaBuyerActivity" />
         <activity
             android:name=".SocialMediaActivity"
             android:label="Connect With Us"
             android:parentActivityName=".HomePageFarmerActivity" />
         <activity
             android:name=".ExperContactsActivity"
-            android:label="Agricultural Advisory"
-            android:parentActivityName=".HomePageFarmerActivity" />
+            android:label="Expert Advisory"
+            android:parentActivityName=".AgriculturalAdvisoryFarmerActivity" />
         <activity android:name=".SellFarmerActivity" />
         <activity
             android:name=".MarketTrendsFarmerActivity"
@@ -61,12 +113,12 @@
         <activity
             android:name=".BuyCropsBuyerActivity"
             android:label="Buy Crops"
-            android:parentActivityName=".HomePageBuyerActivity" />
+            android:parentActivityName=".HomePageBuyerActivity" /> <!-- android:label="Buy Commodities" -->
         <activity android:name=".SettingsFarmerActivity" />
         <activity
             android:name=".SelectBuyerFarmerActivity"
-            android:label="Select Buyer"
-            android:parentActivityName=".HomePageFarmerActivity" />
+            android:label="View Requirements"
+            android:parentActivityName=".HomePageFarmerActivity" /> <!-- android:label="Select Buyer" -->
         <activity
             android:name=".CropSelectionFarmerActivity"
             android:label="Crop Selection"
@@ -89,6 +141,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
     </application>
 
 </manifest>
